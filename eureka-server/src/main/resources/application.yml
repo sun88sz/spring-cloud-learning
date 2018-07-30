@@ -1,0 +1,17 @@
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    # Indicates whether or not this instance should register its information with eureka server for discovery by others.
+    # In some cases, you do not want your instances to be discovered whereas you just want do discover other instances.
+    # 本身不需要向eureka注册
+    #register-with-eureka: false
+    # Indicates whether this client should fetch eureka registry information from eureka	 * server.
+    # 本身不需要向eureka检索服务
+    #fetch-registry: false
+    # Map<String, String> serviceUrl
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
