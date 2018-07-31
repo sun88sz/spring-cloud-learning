@@ -12,11 +12,14 @@
     <modules>
         <module>eureka-server</module>
         <module>zuul</module>
+        <module>feign</module>
     </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <springboot.version>1.5.13.RELEASE</springboot.version>
         <springcloud.version>Edgware.SR4</springcloud.version>
     </properties>
