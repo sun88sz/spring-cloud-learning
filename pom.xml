@@ -13,6 +13,7 @@
         <module>eureka-server</module>
         <module>zuul</module>
         <module>feign</module>
+        <module>prometheus</module>
     </modules>
 
     <properties>
@@ -51,6 +52,36 @@
     </dependencyManagement>
 
     <repositories>
+        <repository>
+            <id>alimaven</id>
+            <name>aliyun maven</name>
+            <url>http://maven.aliyun.com/nexus/content/repositories/central/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+
+        <!-- 中央仓库1 -->
+        <repository>
+            <id>repo1</id>
+            <name>repo1</name>
+            <url>http://repo1.maven.org/maven2/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+
+        <!-- 中央仓库2 -->
+        <repository>
+            <id>repo2</id>
+            <name>repo2</name>
+            <url>http://repo2.maven.org/maven2/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+
+        <!-- Spring -->
         <repository>
             <id>spring-milestones</id>
             <name>Spring Milestones</name>
