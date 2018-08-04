@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * Description: <br/>
  * Date: 2018-07-31
@@ -19,9 +21,20 @@ public class EmpConsumerController {
     @Autowired
     private EmployeeServiceApi employeeServiceApi;
 
-    @GetMapping("/test")
-    public String test() {
-        return employeeServiceApi.get();
+    @GetMapping("/version")
+    public String test(HttpServletRequest request) {
+        System.out.println("version");
+        System.out.println(request.getSession().getId());
+
+        return "consumer-2";
+    }
+
+    @GetMapping("/call")
+    public String get(HttpServletRequest request) {
+        System.out.println("call");
+        System.out.println(request.getSession().getId());
+
+        return "call - " + employeeServiceApi.version();
     }
 
 }

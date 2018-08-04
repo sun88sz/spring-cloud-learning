@@ -12,6 +12,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 @FeignClient("FEIGN-CONSUMER-1")
 public interface EmployeeServiceApi {
 
-    @GetMapping("/emp/no")
-    String get();
+    @GetMapping("/emp/version")
+    String version();
 }
