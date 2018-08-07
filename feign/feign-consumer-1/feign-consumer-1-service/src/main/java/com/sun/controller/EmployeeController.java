@@ -21,8 +21,16 @@ public class EmployeeController {
     @GetMapping("/version")
     public String version(HttpServletRequest request) {
         log.info("version");
-        log.info(request.getSession().getId());
+        log.info("sessionId [{}]",request.getSession().getId());
 
         return "consumer-1";
+    }
+
+    @GetMapping("/call")
+    public String call(HttpServletRequest request) {
+        log.info("call");
+        log.info("sessionId [{}]",request.getSession().getId());
+
+        return "emp-call";
     }
 }

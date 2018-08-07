@@ -14,4 +14,7 @@ public interface EmployeeServiceApi {
 
     @GetMapping("/emp/version")
     String version();
+
+    @GetMapping("/emp/call")
+    String call();
 }

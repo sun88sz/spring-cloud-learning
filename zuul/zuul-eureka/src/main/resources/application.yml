@@ -7,3 +7,25 @@ eureka:
   client:
     service-url:
       defaultZone: http://127.0.0.1:8761/eureka/
+
+#zuul:
+#    host:
+#        connect-timeout-millis: 20000
+#        socket-timeout-millis: 20000
+#
+#hystrix:
+#    command:
+#        default:
+#            execution:
+#                isolation:
+#                    thread:
+#                        timeout-in-milliseconds: 30000
+
+
+# AbstractRibbonCommand.getRibbonTimeout
+# 在filter都执行完成之后的时间
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 10000
+#  MaxAutoRetries: 0
+#  MaxAutoRetriesNextServer: 0
