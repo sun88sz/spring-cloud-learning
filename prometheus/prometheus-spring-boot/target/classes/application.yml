@@ -1,0 +1,26 @@
+server:
+  port: 20001
+spring:
+  application:
+    name: PROMETHEUS-SPRING-BOOT
+#  metrics:
+#    servo:
+#      enabled: false
+
+management:
+  security:
+    #是否启用安全
+    enabled: false
+#endpoints:
+#  prometheus:
+#    id: metrics
+#  metrics:
+#    id: springmetrics
+#    sensitive: false
+#    enabled: true
+#
+#endpoints:
+#  shutdown:
+#    #开启shutdown端点
+#    enabled: true
+

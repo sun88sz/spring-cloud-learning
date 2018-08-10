@@ -1,0 +1,12 @@
+server:
+  port: 10001
+spring:
+  application:
+    name: FEIGN-CONSUMER-1
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 10000
