@@ -10,6 +10,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>sleuth</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>sleuth-application-1</module>
+        <module>sleuth-application-2</module>
+        <module>zipkin-server</module>
+    </modules>
 
 
 </project>
