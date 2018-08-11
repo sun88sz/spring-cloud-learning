@@ -28,11 +28,18 @@
         </dependency>
 
 
-        <!--如果使用http作为通知方式-->
+        <!--如果使用zipkin http作为通知方式-->
         <!--<dependency>-->
         <!--<groupId>org.springframework.cloud</groupId>-->
         <!--<artifactId>spring-cloud-starter-zipkin</artifactId>-->
         <!--</dependency>-->
+
+        <!--zipkin使用 mq作为通知方式-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.amqp</groupId>-->
+            <!--<artifactId>spring-rabbit</artifactId>-->
+        <!--</dependency>-->
+
 
         <!--如果使用mq作为通知方式-->
         <dependency>

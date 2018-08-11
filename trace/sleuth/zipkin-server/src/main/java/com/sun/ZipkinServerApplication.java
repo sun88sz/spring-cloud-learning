@@ -10,11 +10,11 @@ import zipkin.server.internal.EnableZipkinServer;
  * @date : 2018/8/10 14:39
  */
 @SpringBootApplication
-@EnableZipkinServer
-//@EnableZipkinStreamServer
+//@EnableZipkinServer
+@EnableZipkinStreamServer
 public class ZipkinServerApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ZipkinServerApplication.class);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(ZipkinServerApplication.class);
+    }
 }

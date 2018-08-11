@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: zuul-gateway-alone
+server:
+  port: 1101

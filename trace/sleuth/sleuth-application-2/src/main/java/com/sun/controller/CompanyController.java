@@ -27,7 +27,7 @@ public class CompanyController {
     @GetMapping("/version")
     public String test(HttpServletRequest request) {
         log.info("version");
-        log.info("sessionId [{}]",request.getSession().getId());
+        log.info("sessionId [{}]", request.getSession().getId());
 
         return "consumer-2";
     }
@@ -35,7 +35,7 @@ public class CompanyController {
     @GetMapping("/call")
     public String get(HttpServletRequest request) {
         log.info("com call");
-        log.info("sessionId [{}]",request.getSession().getId());
+        log.info("sessionId [{}]", request.getSession().getId());
 
         return "com-call ... " + employeeServiceApi.call();
     }

@@ -1,11 +1,9 @@
-server:
-  port: 10002
 spring:
   application:
-    name: FEIGN-CONSUMER-2
+    name: ZUUL-GATEWAY-EUREKA
+server:
+  port: 2222
 eureka:
   client:
     service-url:
       defaultZone: http://127.0.0.1:8761/eureka/
-
-
