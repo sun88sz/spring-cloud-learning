@@ -3,6 +3,7 @@ package com.sun.controller;
 import javax.servlet.http.HttpServletRequest;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,6 +18,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/emp")
 @Slf4j
 public class EmployeeController {
+
+	@Autowired
+	private EmployeeService employeeService;
 
 	@GetMapping("/version")
 	public String version(HttpServletRequest request) {
@@ -50,6 +54,11 @@ public class EmployeeController {
 		log.info("X-B3-ParentSpanId [{}] （标识当前工作单元所属的上一个工作单元）", xB3ParentSpanId);
 		log.info("X-B3-Sampled [{}] （是否被抽样输出的标志，1表示需要被输出，0表示不需要被输出）", xB3Sampled);
 		log.info("X-Span-Name [{}] （工作单元的名称）", xSpanName);
+
+
+		employeeService.call();
+
+
 		return "emp-call";
 	}
 }
