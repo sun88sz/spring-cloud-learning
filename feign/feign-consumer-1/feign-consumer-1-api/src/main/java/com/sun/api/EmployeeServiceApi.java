@@ -1,6 +1,5 @@
 package com.sun.api;
 
-//import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -10,12 +9,12 @@ import org.springframework.web.bind.annotation.GetMapping;
  *
  * @author Sun
  */
-@FeignClient("FEIGN-CONSUMER-1")
+@FeignClient(value = "FEIGN-CONSUMER-1", path = "emp", fallback = EmployeeServiceHystrix.class)
 public interface EmployeeServiceApi {
 
-    @GetMapping("/emp/version")
+    @GetMapping("/version")
     String version();
 
-    @GetMapping("/emp/call")
+    @GetMapping("/call")
     String call();
 }

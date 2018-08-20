@@ -1,0 +1,40 @@
+server:
+  port: 4444
+spring:
+  application:
+    name: GATEWAY
+  redis:
+    host: 127.0.0.1
+    port: 6379
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          ## 开启默认eureka配置
+          enabled: true
+          ## url上小写匹配ServiceId
+          lower-case-service-id: true
+      routes:
+      - id: path_route
+        ## lb代表从注册中心获取服务
+        uri: lb://FEIGN-CONSUMER-1/emp
+        predicates:
+        - Path=/emp/**
+        filters:
+        - name: RequestRateLimiter
+          args:
+            # 允许用户每秒处理多少个请求
+            redis-rate-limiter.replenishRate: 10
+            # 令牌桶的容量，允许在一秒钟内完成的最大请求数
+            redis-rate-limiter.burstCapacity: 20
+            key-resolver: "#{@ipKeyResolver}"
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 10000
+
+

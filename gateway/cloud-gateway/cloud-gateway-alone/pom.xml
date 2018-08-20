@@ -12,4 +12,11 @@
     <artifactId>cloud-gateway-alone</artifactId>
 
 
+    <dependencies>
+        <!-- gateway是用过webflux实现，在项目中请不要引用webmvc，否则初始化会报错 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
+        </dependency>
+    </dependencies>
 </project>

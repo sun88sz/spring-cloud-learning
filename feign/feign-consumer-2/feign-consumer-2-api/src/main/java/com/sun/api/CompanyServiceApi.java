@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.GetMapping;
  *
  * @author Sun
  */
-@FeignClient("FEIGN-CONSUMER-2")
+@FeignClient(value = "FEIGN-CONSUMER-2", path = "/com", fallback = CompanyServiceHystrix.class)
 public interface CompanyServiceApi {
 
-    @GetMapping("/com/version")
+    @GetMapping("/version")
     String version();
 
-    @GetMapping("/com/call")
+    @GetMapping("/call")
     String call();
 }

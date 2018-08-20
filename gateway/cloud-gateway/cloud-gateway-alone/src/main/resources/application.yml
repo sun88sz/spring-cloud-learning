@@ -1,0 +1,12 @@
+server:
+  port: 3333
+spring:
+  application:
+    name: GATEWAY
+  cloud:
+      gateway:
+        routes:
+        - id: path_route
+          uri: https://github.com
+          predicates:
+          - Path=/spring-cloud
