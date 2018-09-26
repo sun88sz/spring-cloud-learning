@@ -1,0 +1,16 @@
+## 刷新时，关闭安全验证
+management: 
+  security: 
+    enabled: false
+    
+## 开启消息跟踪
+spring:
+  cloud: 
+    bus:
+      trace: 
+        enabled: true
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
