@@ -1,40 +1,76 @@
 server:
   port: 4444
+  
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/
+      
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 10000
+  
+  
 spring:
   application:
-    name: GATEWAY
-  redis:
-    host: 127.0.0.1
-    port: 6379
+    name: CLOUD-GATEWAY
+  
   cloud:
     gateway:
       discovery:
         locator:
-          ## 开启默认eureka配置
+          # 是否与服务发现组件进行结合，通过 serviceId(必须设置成大写) 转发到具体的服务实例。
+          # 默认为false，设为true便开启通过服务中心的自动根据 serviceId 创建路由的功能。
           enabled: true
           ## url上小写匹配ServiceId
           lower-case-service-id: true
+          
       routes:
-      - id: path_route
+      # 网关路由到网易官网
+      - id: 163                     
+        uri: http://www.163.com/
+        predicates:
+          - Path=/163/**
+      
+      # 路由到 /consumer-1/emp 服务
+      - id: emp
         ## lb代表从注册中心获取服务
-        uri: lb://FEIGN-CONSUMER-1/emp
+        uri: lb://feign-consumer-1/emp
         predicates:
         - Path=/emp/**
         filters:
         - name: RequestRateLimiter
           args:
             # 允许用户每秒处理多少个请求
-            redis-rate-limiter.replenishRate: 10
+            redis-rate-limiter.replenishRate: 2
             # 令牌桶的容量，允许在一秒钟内完成的最大请求数
-            redis-rate-limiter.burstCapacity: 20
+            redis-rate-limiter.burstCapacity: 1
+            # 默认使用PrincipalNameKeyResolver
             key-resolver: "#{@ipKeyResolver}"
+#      - id: save_session
+#        uri: /
+#        predicates:
+#        - Path=/**
+#        filters:
+#        - SaveSession
+        
+    default-filters:
+#    - name: RequestRateLimiter
+#      args:
+#        # 允许用户每秒处理多少个请求
+#        redis-rate-limiter.replenishRate: 1
+#        # 令牌桶的容量，允许在一秒钟内完成的最大请求数
+#        redis-rate-limiter.burstCapacity: 1
+#        key-resolver: "#{@ipKeyResolver}"
+#        # key-resolver: "#{@remoteAddrKeyResolver}"
+#        # rate-limiter: "#{@customRateLimiter}"   # token            
+#        # 分别定义限流键和限流的配置 
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://127.0.0.1:8761/eureka/
-ribbon:
-  ReadTimeout: 10000
-  ConnectTimeout: 10000
+  redis:
+      host: 127.0.0.1
+      port: 6379
+      
+      
 
 

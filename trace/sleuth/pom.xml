@@ -16,6 +16,5 @@
         <module>sleuth-application-2</module>
         <module>zipkin-server</module>
     </modules>
-
-
+    
 </project>
