@@ -17,6 +17,7 @@
         <module>gateway</module>
         <module>bus</module>
         <module>trace</module>
+        <module>job</module>
     </modules>
 
     <properties>

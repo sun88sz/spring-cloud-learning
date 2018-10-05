@@ -1,0 +1,8 @@
+server:
+  port: 9101
+
+spring:
+  application:
+    name: spring-boot-admin
+spring.boot.admin.url: http://localhost:9101
+management.security.enabled: false
