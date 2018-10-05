@@ -2,7 +2,7 @@ server:
   port: 10001
 spring:
   application:
-    name: FEIGN-CONSUMER-1
+    name: feign-consumer-1
 eureka:
   client:
     service-url:

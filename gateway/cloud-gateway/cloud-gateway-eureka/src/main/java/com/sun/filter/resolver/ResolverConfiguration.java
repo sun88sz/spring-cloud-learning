@@ -1,4 +1,4 @@
-package com.sun.config;
+package com.sun.filter.resolver;
 
 import org.springframework.cloud.gateway.filter.ratelimit.KeyResolver;
 import org.springframework.context.annotation.Bean;
@@ -12,7 +12,7 @@ import reactor.core.publisher.Mono;
  * @author Sun
  */
 @Configuration
-public class IPConfiguration {
+public class ResolverConfiguration {
 
     /**
      * ip限流
@@ -36,6 +36,7 @@ public class IPConfiguration {
 
     /**
      * 接口限流
+     *
      * @return
      */
     @Bean

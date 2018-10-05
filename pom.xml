@@ -10,14 +10,12 @@
     <packaging>pom</packaging>
     <version>1.0.0-SNAPSHOT</version>
     <modules>
-        <module>eureka-server</module>
         <module>feign</module>
         <module>prometheus</module>
         <module>config</module>
         <module>gateway</module>
         <module>bus</module>
         <module>trace</module>
-        <module>job</module>
     </modules>
 
     <properties>
@@ -34,20 +32,17 @@
 
 
     <dependencies>
+        <!--lombok-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <version>1.16.22</version>
         </dependency>
     </dependencies>
 
     <dependencyManagement>
         <dependencies>
-            <!--lombok-->
-            <!--<dependency>-->
-                <!--<groupId>org.projectlombok</groupId>-->
-                <!--<artifactId>lombok</artifactId>-->
-                <!--<version>1.16.22</version>-->
-            <!--</dependency>-->
+
 
             <!--配置中心-->
             <dependency>
