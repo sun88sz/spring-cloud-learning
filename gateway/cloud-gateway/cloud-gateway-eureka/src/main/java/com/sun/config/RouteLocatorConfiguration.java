@@ -17,7 +17,6 @@ import reactor.core.publisher.Mono;
 @Configuration
 public class RouteLocatorConfiguration {
 
-
     @Bean
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
         return builder.routes()

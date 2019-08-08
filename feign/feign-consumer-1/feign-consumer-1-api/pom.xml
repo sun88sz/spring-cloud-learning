@@ -11,5 +11,11 @@
 
     <artifactId>feign-consumer-1-api</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>com.sun</groupId>
+            <artifactId>feign-base</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>

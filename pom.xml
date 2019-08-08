@@ -27,8 +27,8 @@
         <!--<springboot.version>1.5.13.RELEASE</springboot.version>-->
         <!--<springcloud.version>Edgware.SR4</springcloud.version>-->
 
-        <springboot.version>2.0.4.RELEASE</springboot.version>
-        <springcloud.version>Finchley.SR1</springcloud.version>
+        <springboot.version>2.1.6.RELEASE</springboot.version>
+        <springcloud.version>Greenwich.SR2</springcloud.version>
     </properties>
 
 
@@ -38,6 +38,18 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.16.22</version>
+        </dependency>
+
+        <!-- Utils -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.3</version>
         </dependency>
     </dependencies>
 

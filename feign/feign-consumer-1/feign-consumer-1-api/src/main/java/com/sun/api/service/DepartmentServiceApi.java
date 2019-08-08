@@ -1,4 +1,4 @@
-package com.sun.api;
+package com.sun.api.service;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,8 +9,11 @@ import org.springframework.web.bind.annotation.GetMapping;
  *
  * @author Sun
  */
-@FeignClient(value = "FEIGN-CONSUMER-1", path = "emp", fallback = EmployeeServiceHystrix.class)
-public interface EmployeeServiceApi {
+@FeignClient(
+        value = "FEIGN-CONSUMER-1",
+        contextId = "FEIGN-CONSUMER-1-DEPT",
+        path = "dept")
+public interface DepartmentServiceApi {
 
     @GetMapping("/version")
     String version();
