@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>sleuth</module>
+        <module>spring-boot-admin</module>
     </modules>
 
 
