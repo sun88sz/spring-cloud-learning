@@ -27,8 +27,9 @@
         <!--<springboot.version>1.5.13.RELEASE</springboot.version>-->
         <!--<springcloud.version>Edgware.SR4</springcloud.version>-->
 
-        <springboot.version>2.1.6.RELEASE</springboot.version>
-        <springcloud.version>Greenwich.SR2</springcloud.version>
+        <springboot.version>2.2.2.RELEASE</springboot.version>
+        <springcloud.version>Hoxton.RELEASE</springcloud.version>
+        <nacos.version>2.1.1.RELEASE</nacos.version>
     </properties>
 
 
@@ -55,8 +56,6 @@
 
     <dependencyManagement>
         <dependencies>
-
-
             <!--配置中心-->
             <dependency>
                 <groupId>com.baidu.disconf</groupId>
@@ -79,6 +78,18 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+                <version>${nacos.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+                <version>${nacos.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

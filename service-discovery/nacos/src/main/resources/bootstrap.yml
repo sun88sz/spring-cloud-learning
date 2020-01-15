@@ -1,0 +1,15 @@
+#服务名
+spring:
+  application:
+    name: nacos-test
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.2.233
+        port: 8848
+      # 配置中心url
+      config:
+        server-addr: 192.168.2.233:8848
+        # ,后不能有空格
+        shared-dataids: value.yml,redis.yml
+        refreshable-dataids: value.yml,redis.yml
